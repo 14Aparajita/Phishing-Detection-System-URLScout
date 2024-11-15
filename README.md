@@ -98,13 +98,10 @@ Contributions are welcome! To contribute:
 
 If you have any questions or feedback, please reach out:
 
-- **Email**: aparajitavaish@example.com
-- **GitHub**: [AparajitaVaish](https://github.com/username)
+- **Email**: aparajitavaish@gmail.com
+- **GitHub**: [AparajitaVaish](https://github.com/14Aparajita)
 
 ---
 
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---

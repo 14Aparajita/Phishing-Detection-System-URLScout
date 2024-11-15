@@ -11,13 +11,13 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '080e6cbaf658085222c3b95c1f7e16d31b02835503af140b'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'MySQL'
+app.config['MYSQL_PASSWORD'] = 'your password'
 app.config['MYSQL_DB'] = 'url_prediction'
 
 mysql = MySQL(app)
 
 # path to trained model
-model_path = r"C:\MyFolders\Projects\minor project\patent2\Malicious_URL_Prediction.h5"
+model_path = r"path to file\Malicious_URL_Prediction.h5"
 
 # Flask-WTF forms
 class RegistrationForm(FlaskForm):

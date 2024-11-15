@@ -1,8 +1,5 @@
 # 🌐 Phishing-Detection-System-URLScout
 
-
-# 🌐 Phishing Detection System - URLScout
-
 **URLScout** is an advanced **Phishing Detection System** that helps users identify fraudulent websites attempting to steal personal information. This project was developed as part of my B.Tech minor project in the 3rd year of Computer Science. Using machine learning, URLScout analyzes URLs in real-time to determine if they are potentially malicious.
 
 ---

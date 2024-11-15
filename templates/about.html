@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>Phishing Detection System - URLScout</h1>
+        </div>
+        <div class="navbar">
+            <a href="{{ url_for('landing') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>About Us</h2>
+
+        <!-- About Information -->
+        <p>Welcome to <strong>URLScout</strong>, a cutting-edge solution designed to help individuals and organizations protect themselves from the ever-growing threat of phishing attacks.</p>
+
+        <p>This project, developed as part of my minor project in BTech Computer Science (3rd Year), focuses on using machine learning algorithms to predict and classify potentially harmful URLs. During the course of this project, I applied advanced techniques in data science, particularly supervised learning, to analyze URL structures, lexical features, and domain characteristics to make predictions about their safety.</p>
+
+        <h3>Why Phishing Protection Matters</h3>
+        <p>Phishing attacks continue to be one of the most widespread and damaging forms of cybercrime. By impersonating trusted websites, cybercriminals trick users into disclosing sensitive personal information, which can then be exploited. The goal of URLScout is to provide real-time protection by detecting and flagging URLs that could pose a threat to your online security.</p>
+
+        <h3>What Makes URLScout Different?</h3>
+        <p>Unlike traditional approaches that rely solely on blacklists or predefined URL patterns, URLScout leverages modern machine learning models to assess URLs based on a wide variety of features. These include:</p>
+        <ul>
+            <li><strong>URL Length</strong>: Longer URLs are often suspicious, as they are used to hide malicious content.</li>
+            <li><strong>Domain Information</strong>: We analyze domain names to detect unusual patterns or mismatched associations.</li>
+            <li><strong>URL Structure</strong>: We evaluate the structure of the URL, including the presence of subdomains and special characters.</li>
+            <li><strong>Historical Data</strong>: The system is trained using a dataset of known phishing URLs, enabling it to predict future threats more accurately.</li>
+        </ul>
+
+        <h3>Machine Learning at Its Core</h3>
+        <p>At the heart of URLScout lies a machine learning model that has been trained on a large dataset of both legitimate and phishing URLs. The model analyzes new URLs by comparing them with learned patterns and characteristics, providing a prediction on whether the URL is malicious. The threshold is set such that URLs with a probability higher than 65% are flagged as potentially harmful, allowing users to take appropriate action before any harm can occur.</p>
+
+        <h3>A Project Born from Passion and Curiosity</h3>
+        <p>This system was born out of my fascination with both cybersecurity and machine learning. As a Computer Science student, I wanted to create a practical solution to address a real-world problem, and phishing seemed like a pressing issue that needed attention. This project not only allowed me to apply theoretical knowledge but also challenged me to explore new areas such as data preprocessing, model training, and performance evaluation.</p>
+
+        <h3>Looking Ahead</h3>
+        <p>Although URLScout is currently a prototype, the vision is to continuously improve it by incorporating more advanced algorithms and integrating it with popular browsers as a browser extension. As phishing techniques evolve, so will URLScout, ensuring that we remain a step ahead in the fight against cybercrime.</p>
+
+        <a href="{{ url_for('landing') }}" class="home-link">Back to Home</a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop">↑</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Phishing Detection System</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

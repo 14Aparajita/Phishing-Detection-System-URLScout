@@ -1,0 +1,81 @@
+<!-- templates/show_prediction.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <h2>Prediction for {{ url }}:</h2>
+    <p>There is {{ prediction }}% chance the URL is malicious!</p>
+    <br>
+    <a href="/">Predict Another URL</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>Phishing Detection System - URLScout</h1>
+        </div>
+        <div class="navbar">
+            <a href="{{ url_for('landing') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <div class="result-box">
+            <p><strong>URL:</strong> {{ url }}</p>
+            {% if prediction is not none %}
+                <p><strong>Prediction:</strong> There is {{ prediction }}% chance that the URL is malicious.</p>
+                {% if prediction > 65 %}
+                    <div class="alert alert-danger">
+                        <p>This URL can be reported for further investigation.</p>
+                        <form method="POST" action="{{ url_for('report') }}">
+                            <input type="hidden" name="url" value="{{ url }}">
+                            <input type="submit" value="Report URL" class="btn btn-danger">
+                        </form>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success">
+                        <p>This URL is considered safe.</p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <p>Unable to make a prediction. Please try again.</p>
+            {% endif %}
+            <p><a href="{{ url_for('enter_url') }}" class="home-link">Check another URL</a></p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop">&#8679;</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Phishing Detection System</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

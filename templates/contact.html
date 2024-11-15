@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>Phishing Detection System - URLScout</h1>
+        </div>
+        <div class="navbar">
+            <a href="{{ url_for('landing') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>Contact Us</h2>
+
+        <!-- Contact Form -->
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <label for="name">{{ form.name.label }}</label><br>
+                {{ form.name(size=32) }}<br>
+                {% for error in form.name.errors %}
+                    <span class="error-message">[{{ error }}]</span><br>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="email">{{ form.email.label }}</label><br>
+                {{ form.email(size=32) }}<br>
+                {% for error in form.email.errors %}
+                    <span class="error-message">[{{ error }}]</span><br>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="message">{{ form.message.label }}</label><br>
+                {{ form.message(rows=5, cols=40) }}<br>
+                {% for error in form.message.errors %}
+                    <span class="error-message">[{{ error }}]</span><br>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.submit() }}
+            </div>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p>For queries, email us at: <strong>example@example.com</strong></p>
+            <p>Phone: <strong>+1234567890</strong></p>
+        </div>
+
+        <a href="{{ url_for('landing') }}" class="home-link">Back to Home</a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop">&#8679;</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Phishing Detection System</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

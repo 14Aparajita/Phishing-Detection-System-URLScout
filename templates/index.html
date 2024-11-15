@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Phishing Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>URL Phishing Prediction</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- URL Prediction Form -->
+        <form method="POST" action="/">
+            <label for="url">Enter URL:</label><br>
+            <input type="text" id="url" name="url" required placeholder="Enter URL here" autofocus><br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        <!-- Display Prediction Result -->
+        {% if prediction is not none %}
+            <div class="result">
+                <h2>Prediction for {{ url }}:</h2>
+                <p>There is <strong>{{ prediction }}%</strong> chance the URL is malicious!</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop">&#8679;</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Phishing Detection System</p>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - URLScout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>Phishing Detection System - URLScout</h1>
+        </div>
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <a href="{{ url_for('landing') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container landing">
+        <h2>Welcome to URLScout</h2>
+        <p><strong>Your Guardian Against Phishing Threats</strong></p>
+
+        <p>In the digital age, online security is more important than ever. Every day, millions of people around the world fall victim to phishing attacks — cybercrimes where malicious websites trick users into sharing sensitive personal information. At <strong>URLScout</strong>, we’re here to help you stay safe.</p>
+
+        <h3>What is URLScout?</h3>
+        <p><strong>URLScout</strong> is an intelligent <em>Phishing Detection System</em> designed to identify and flag potentially malicious websites. With our cutting-edge machine learning models, we analyze the URLs you visit and predict the likelihood of them being malicious. If a URL has a high probability of being harmful, you’ll be alerted, giving you the tools to make informed decisions about your online safety.</p>
+
+        <h3>How It Works:</h3>
+        <ol>
+            <li><strong>Submit a URL</strong>: Simply paste any URL into our system.</li>
+            <li><strong>Instant Prediction</strong>: Our system analyzes the URL using advanced algorithms and machine learning models.</li>
+            <li><strong>Get Results</strong>: Receive a prediction on whether the URL is safe or potentially harmful, based on a risk probability score.</li>
+        </ol>
+
+        <h3>Why URLScout?</h3>
+        <ul>
+            <li><strong>Real-Time Protection:</strong> Get instant results to avoid phishing sites before they can harm you.</li>
+            <li><strong>Advanced Machine Learning:</strong> We use sophisticated algorithms, including a Multi-Layer Perceptron (MLP), to ensure the most accurate predictions.</li>
+            <li><strong>Easy-to-Use:</strong> Simple interface, quick results — no technical expertise required!</li>
+            <li><strong>Free and Accessible:</strong> URLScout is available for everyone, anytime, anywhere.</li>
+        </ul>
+
+        <h3>How the Model Works</h3>
+        <p>The system uses a <strong>Multi-Layer Perceptron (MLP)</strong> model, a type of artificial neural network, to classify URLs as legitimate or malicious. The model has been trained on a large dataset containing 450,000 URL samples. The training process involved extracting various features such as:</p>
+        <ul>
+            <li><strong>URL Length:</strong> The total length of the URL.</li>
+            <li><strong>Hostname Length:</strong> Length of the domain name.</li>
+            <li><strong>Path Length:</strong> Length of the path after the domain name.</li>
+            <li><strong>Entropy:</strong> Measures the randomness of the URL, indicating its complexity.</li>
+            <li><strong>Suspicious Keywords:</strong> Detection of any harmful or misleading keywords in the URL.</li>
+        </ul>
+        <p>These features are then processed through the MLP model, which evaluates the patterns and relationships in the data to predict the likelihood of a phishing attempt. The prediction is displayed as a risk probability, helping users identify potentially harmful websites before they click.</p>
+
+        <h3>Why Is URLScout Useful?</h3>
+        <p><strong>URLScout</strong> is not just another phishing detection tool — it’s an essential layer of protection for anyone who values their online privacy and security. Phishing attacks are becoming increasingly sophisticated, and traditional methods of detection are not enough to stop them. With <strong>URLScout</strong>, users can:</p>
+        <ul>
+            <li><strong>Prevent Cybercrime:</strong> Identify phishing sites before they can steal your personal data.</li>
+            <li><strong>Enhance Security Awareness:</strong> Stay informed about the URLs you visit and recognize suspicious patterns.</li>
+            <li><strong>Contribute to Safer Internet Practices:</strong> By reporting harmful URLs, users help protect others from phishing attempts.</li>
+        </ul>
+        <p>Our system combines the power of machine learning with practical, real-time solutions, offering you a simple yet effective way to safeguard your online presence. Whether you're browsing the web for shopping, checking your email, or simply exploring, <strong>URLScout</strong> ensures that your online experience remains secure.</p>
+
+        <p><strong>Don’t let phishing threats jeopardize your safety.</strong> Start using <strong>URLScout</strong> today and take control of your online security.</p>
+
+        <div class="buttons">
+            <a href="{{ url_for('register') }}" class="btn">Register Now</a>
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop">↑</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Phishing Detection System</p>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Flask==3.0.3
+Flask_MySQLdb==2.0.0
+flask_wtf==1.2.1
+tensorflow==2.10.0
+Werkzeug==3.0.4
+WTForms==3.1.2
